@@ -149,7 +149,7 @@ def hash_file(file_path, algorithm='sha256', chunk_size=8192) -> str:
 
 timestamps_dict: Dict[Tuple[str, int, int, float, str], Dict[str, Any]] = {}
 
-def get_timestamps(file, precision=100, block_size=600, threshold=0.90, focus_idx=58, model="bdetectionmodel_05_01_23", logger=None):
+def get_timestamps(file, precision=100, block_size=600, threshold=0.90, focus_idx=60, model="bdetectionmodel_05_01_23", logger=None):
     # Input checking
     if precision < 0:
         raise Exception("Precision must be a positive number!")
@@ -216,3 +216,4 @@ def get_timestamps(file, precision=100, block_size=600, threshold=0.90, focus_id
 
     timestamps_dict[(file_hash, precision, block_size, threshold, model)] = info
     return info, False
+
